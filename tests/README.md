@@ -10,3 +10,5 @@ The steps:
 3. Do a logical shift of colors into a "dark mode"
 4. Generate a new stylesheet
 
+
+The big challenge will be in #3
