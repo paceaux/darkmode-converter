@@ -1,6 +1,6 @@
 const ColorSpaces = require('../lib/color-spaces');
 
-describe('convert to rgb', () => {
+describe('convert To: RGB', () => {
     test('hexToRgb, 3 digits', () => {
         const testColor = '#f00';
         const result = ColorSpaces.hexToRgb(testColor);
@@ -49,13 +49,13 @@ describe('convert to rgb', () => {
     });
 });
 
-test('rgbToHex, ', () => {
+test('convert to: Hex, ', () => {
     const testColor = 'rgb(255,0,0)';
 
     expect(ColorSpaces.rgbToHex(testColor)).toBe('#ff0000');
 });
 
-describe('convert To HSL', () => {
+describe('convert to: HSL', () => {
     test('rgbToHsl, ', () => {
         const testColor = 'rgb(255,0,0)';
         const result = ColorSpaces.rgbToHsl(testColor);
