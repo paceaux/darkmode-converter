@@ -10,6 +10,7 @@ module.exports = {
         "SharedArrayBuffer": "readonly",
         "test": "readonly",
         "expect": "readonly",
+        "describe": "readonly",
     },
     "parserOptions": {
         "ecmaVersion": 2018
