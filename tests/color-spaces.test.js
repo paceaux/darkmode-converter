@@ -2,14 +2,20 @@ const ColorSpaces = require('../lib/color-spaces');
 
 test('hexToRgb, 3 digits', () => {
     const testColor = '#f00';
+    const result = ColorSpaces.hexToRgb(testColor);
 
-    expect(ColorSpaces.hexToRgb(testColor)).toBe('rgb(255,0,0)');
+    expect(result[0]).toBe(255);
+    expect(result[1]).toBe(0);
+    expect(result[2]).toBe(0);
 });
 
 test('hexToRgb, 6 digits', () => {
     const testColor = '#ff0000';
+    const result = ColorSpaces.hexToRgb(testColor);
 
-    expect(ColorSpaces.hexToRgb(testColor)).toBe('rgb(255,0,0)');
+    expect(result[0]).toBe(255);
+    expect(result[1]).toBe(0);
+    expect(result[2]).toBe(0);
 });
 
 test('rgbToHex, ', () => {
