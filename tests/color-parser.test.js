@@ -34,3 +34,25 @@ describe('parse hex', () => {
         expect(result).toEqual(expect.arrayContaining(['0xff', '0x00', '0x00', '0xff']));
     });
 });
+
+describe('parse hsl', () => {
+    test('hsl', () => {
+        const testColor = 'hsl(0,50%,100%)';
+        const result = ColorParser.hsl(testColor);
+
+        expect(result).toEqual(expect.arrayContaining(['0', '50%', '100%']));
+    });
+    test('hsla, comma separated', () => {
+        const testColor = 'hsla(0,50%,100%,1)';
+        const result = ColorParser.hsla(testColor);
+
+        expect(result).toEqual(expect.arrayContaining(['0', '50%', '100%', '1']));
+    });
+
+    test('hsla, space separated', () => {
+        const testColor = 'hsla(0 50% 100% / 1)';
+        const result = ColorParser.hsla(testColor);
+
+        expect(result).toEqual(expect.arrayContaining(['0', '50%', '100%', '1']));
+    });
+});
