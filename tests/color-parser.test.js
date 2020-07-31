@@ -14,3 +14,23 @@ describe('parse rgb', () => {
         expect(result).toEqual(expect.arrayContaining(['255', '0', '0', '1']));
     });
 });
+describe('parse hex', () => {
+    test('3 digits', () => {
+        const testColor = '#f00';
+        const result = ColorParser.hex(testColor);
+
+        expect(result).toEqual(expect.arrayContaining(['0xff', '0x00', '0x00']));
+    });
+    test('3 digits, alpha', () => {
+        const testColor = '#f00f';
+        const result = ColorParser.hexa(testColor);
+
+        expect(result).toEqual(expect.arrayContaining(['0xff', '0x00', '0x00', '0xff']));
+    });
+    test('6 digits', () => {
+        const testColor = '#ff0000ff';
+        const result = ColorParser.hexa(testColor);
+
+        expect(result).toEqual(expect.arrayContaining(['0xff', '0x00', '0x00', '0xff']));
+    });
+});
