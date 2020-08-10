@@ -1,4 +1,4 @@
-const ColorConverter = require('../lib/color-conversions');
+const ColorConverter = require('../lib/color-converter');
 
 describe('convert To: RGB', () => {
     test('hexToRgb, 3 digits', () => {
