@@ -11,6 +11,27 @@ describe('public props on ColorParser', () => {
         expect(colorSpaceTests.get('hsl')).toBeTruthy();
         expect(colorSpaceTests.get('hsla')).toBeTruthy();
     });
+
+    describe('getColorSpace can determine the colorspace', () => {
+        test('3-letter hex', () => {
+            expect(ColorParser.getColorSpace('#ffa')).toEqual('hex');
+        });
+        test('6-letter hex', () => {
+            expect(ColorParser.getColorSpace('#ffffaa')).toEqual('hex');
+        });
+        test('rgb', () => {
+            expect(ColorParser.getColorSpace('rgb(100,200,100)')).toEqual('rgb');
+        });
+        test('rgba', () => {
+            expect(ColorParser.getColorSpace('rgba(100,200,100, .5)')).toEqual('rgba');
+        });
+        test('hsl', () => {
+            expect(ColorParser.getColorSpace('hsl(100,100%,100%)')).toEqual('hsl');
+        });
+        test('hsla', () => {
+            expect(ColorParser.getColorSpace('hsla(100,100%,100%,.5)')).toEqual('hsla');
+        });
+    });
 });
 describe('parse rgb', () => {
     test('plain rgb', () => {
