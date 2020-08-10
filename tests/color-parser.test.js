@@ -1,5 +1,17 @@
 const ColorParser = require('../lib/color-parser');
 
+describe('public props on ColorParser', () => {
+    test('colorSpaceTests', () => {
+        const { colorSpaceTests } = ColorParser;
+
+        expect(colorSpaceTests.get('rgb')).toBeTruthy();
+        expect(colorSpaceTests.get('rgba')).toBeTruthy();
+        expect(colorSpaceTests.get('hex')).toBeTruthy();
+        expect(colorSpaceTests.get('hexa')).toBeTruthy();
+        expect(colorSpaceTests.get('hsl')).toBeTruthy();
+        expect(colorSpaceTests.get('hsla')).toBeTruthy();
+    });
+});
 describe('parse rgb', () => {
     test('plain rgb', () => {
         const testColor = 'rgb(255,0,0)';
