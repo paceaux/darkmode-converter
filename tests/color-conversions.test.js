@@ -49,10 +49,18 @@ describe('convert To: RGB', () => {
     });
 });
 
-test('convert to: Hex, ', () => {
-    const testColor = 'rgb(255,0,0)';
+describe('convert to: hex', () => {
+    test('rgbToHex, ', () => {
+        const testColor = 'rgb(255,0,0)';
 
-    expect(ColorConverter.rgbToHex(testColor)).toBe('#ff0000');
+        expect(ColorConverter.rgbToHex(testColor)).toStrictEqual(['0xff', '0x00', '0x00']);
+    });
+
+    test('hslToHex: , ', () => {
+        const testColor = 'hsl(0,100%,50%)';
+
+        expect(ColorConverter.hslToHex(testColor)).toStrictEqual(['0xff', '0x00', '0x00']);
+    });
 });
 
 describe('convert to: HSL', () => {
