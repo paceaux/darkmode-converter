@@ -76,4 +76,39 @@ describe('Color Class', () => {
             expect(red.rgb).toEqual('rgb(255,0,0)');
         });
     });
+    describe('Knowing it has alpha', () => {
+        test('hex alpha', () => {
+            const red = new Color('#ff0000ff');
+
+            expect(red).toHaveProperty('rgb');
+            expect(red).toHaveProperty('hasAlpha');
+            expect(red.hasAlpha).toEqual(true);
+        });
+        test('rgba alpha', () => {
+            const red = new Color('rgba(255,0,0,.5)');
+
+            expect(red).toHaveProperty('hsl');
+            expect(red).toHaveProperty('hasAlpha');
+            expect(red.hasAlpha).toEqual(true);
+        });
+        test('hsla alpha', () => {
+            const red = new Color('hsla(0,100%,50%,.5)');
+
+            expect(red).toHaveProperty('rgb');
+            expect(red).toHaveProperty('hasAlpha');
+            expect(red.hasAlpha).toEqual(true);
+        });
+        test('rgba translates to hsla', () => {
+            const red = new Color('rgba(255,0,0,.5)');
+
+            expect(red).toHaveProperty('hsl');
+            expect(red.hsl).toEqual('hsla(0,100%,50%,0.5)');
+        });
+        test('hsla translates to rgba', () => {
+            const red = new Color('hsla(0,100%,50%,0.5)');
+
+            expect(red).toHaveProperty('rgb');
+            expect(red.rgb).toEqual('rgba(255,0,0,0.5)');
+        });
+    });
 });
