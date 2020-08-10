@@ -57,4 +57,23 @@ describe('Color Class', () => {
             expect(red.hsl).toEqual('hsl(0,100%,50%)');
         });
     });
+    describe('Starting with HSL', () => {
+        const red = new Color('hsl(0,100%,50%)');
+        test('color in hsl has hex _parts_', () => {
+            expect(red).toHaveProperty('hexParts');
+            expect(red.hexParts).toStrictEqual(['0xff', '0x00', '0x00']);
+        });
+        test('color in hsl has hex', () => {
+            expect(red).toHaveProperty('hex');
+            expect(red.hex).toEqual('#ff0000');
+        });
+        test('color in hsl has rgb _parts_', () => {
+            expect(red).toHaveProperty('rgbParts');
+            expect(red.rgbParts).toEqual([255, 0, 0]);
+        });
+        test('color in hsl has rgb', () => {
+            expect(red).toHaveProperty('rgb');
+            expect(red.rgb).toEqual('rgb(255,0,0)');
+        });
+    });
 });
