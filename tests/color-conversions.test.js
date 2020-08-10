@@ -1,9 +1,9 @@
-const ColorConversions = require('../lib/color-conversions');
+const ColorConverter = require('../lib/color-conversions');
 
 describe('convert To: RGB', () => {
     test('hexToRgb, 3 digits', () => {
         const testColor = '#f00';
-        const result = ColorConversions.hexToRgb(testColor);
+        const result = ColorConverter.hexToRgb(testColor);
 
         expect(result[0]).toBe(255);
         expect(result[1]).toBe(0);
@@ -12,7 +12,7 @@ describe('convert To: RGB', () => {
 
     test('hexToRgb, 6 digits', () => {
         const testColor = '#ff0000';
-        const result = ColorConversions.hexToRgb(testColor);
+        const result = ColorConverter.hexToRgb(testColor);
 
         expect(result[0]).toBe(255);
         expect(result[1]).toBe(0);
@@ -21,7 +21,7 @@ describe('convert To: RGB', () => {
 
     test('hexaToRgba', () => {
         const testColor = '#ff0000ff';
-        const result = ColorConversions.hexaToRgba(testColor);
+        const result = ColorConverter.hexaToRgba(testColor);
 
         expect(result[0]).toBe(255);
         expect(result[1]).toBe(0);
@@ -31,7 +31,7 @@ describe('convert To: RGB', () => {
 
     test('hslToRgb', () => {
         const testColor = 'hsl(0, 100%, 50%)';
-        const result = ColorConversions.hslToRgb(testColor);
+        const result = ColorConverter.hslToRgb(testColor);
 
         expect(result[0]).toBe(255);
         expect(result[1]).toBe(0);
@@ -40,7 +40,7 @@ describe('convert To: RGB', () => {
 
     test('hslaToRgba', () => {
         const testColor = 'hsla(0, 100%, 50%, 1)';
-        const result = ColorConversions.hslaToRgba(testColor);
+        const result = ColorConverter.hslaToRgba(testColor);
 
         expect(result[0]).toBe(255);
         expect(result[1]).toBe(0);
@@ -52,13 +52,13 @@ describe('convert To: RGB', () => {
 test('convert to: Hex, ', () => {
     const testColor = 'rgb(255,0,0)';
 
-    expect(ColorConversions.rgbToHex(testColor)).toBe('#ff0000');
+    expect(ColorConverter.rgbToHex(testColor)).toBe('#ff0000');
 });
 
 describe('convert to: HSL', () => {
     test('rgbToHsl, ', () => {
         const testColor = 'rgb(255,0,0)';
-        const result = ColorConversions.rgbToHsl(testColor);
+        const result = ColorConverter.rgbToHsl(testColor);
 
         expect(result[0]).toBe(0);
         expect(result[1]).toBe(1);
@@ -67,7 +67,7 @@ describe('convert to: HSL', () => {
 
     test('rgbaToHsla, ', () => {
         const testColor = 'rgba(255,0,0,1)';
-        const result = ColorConversions.rgbaToHsla(testColor);
+        const result = ColorConverter.rgbaToHsla(testColor);
 
         expect(result[0]).toBe(0);
         expect(result[1]).toBe(1);
@@ -77,7 +77,7 @@ describe('convert to: HSL', () => {
 
     test('hexToHsl, ', () => {
         const testColor = '#ff0000';
-        const result = ColorConversions.hexToHsl(testColor);
+        const result = ColorConverter.hexToHsl(testColor);
 
         expect(result[0]).toBe(0);
         expect(result[1]).toBe(1);
@@ -86,7 +86,7 @@ describe('convert to: HSL', () => {
 
     test('hexAToHslA, ', () => {
         const testColor = '#ff0000ff';
-        const result = ColorConversions.hexaToHsla(testColor);
+        const result = ColorConverter.hexaToHsla(testColor);
 
         expect(result[0]).toBe(0);
         expect(result[1]).toBe(1);
