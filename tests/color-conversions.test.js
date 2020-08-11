@@ -56,6 +56,12 @@ describe('convert to: hex', () => {
         expect(ColorConverter.rgbToHex(testColor)).toStrictEqual(['0xff', '0x00', '0x00']);
     });
 
+    test('rgbaToHexa, ', () => {
+        const testColor = 'rgba(255,0,0, 1)';
+
+        expect(ColorConverter.rgbaToHexa(testColor)).toStrictEqual(['0xff', '0x00', '0x00', '0xff']);
+    });
+
     test('hslToHex: , ', () => {
         const testColor = 'hsl(0,100%,50%)';
 
